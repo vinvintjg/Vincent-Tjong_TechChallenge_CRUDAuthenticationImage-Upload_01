@@ -22,6 +22,10 @@ class CreateBooksTable extends Migration
             $table->integer('Harga');
             $table->date('Tanggal')->nullable();
             $table->time('Jam')->nullable();
+            $table->unsignedBigInteger('genreId');
+            $table->foreign('genreId')->references('id')->on('genres')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

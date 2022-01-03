@@ -11,10 +11,11 @@ use Illuminate\Support\Facades\DB;
 class BookController extends Controller
 {
     public function getCreatePage() {
-        return view('create');
+        $genres = Genre::all();
+        return view('create',['genres'=> $genres]);
     }
 
-    public function createBook(Request $request){
+    public function createBook(BookRequest $request){
         Book::create([
             'NamaPembeli' => $request->NamaPembeli,
             'Barang' => $request->Barang,
@@ -22,6 +23,7 @@ class BookController extends Controller
             'Jumlah' => $request->Jumlah,
             'Tanggal' => $request->Tanggal,
             'Jam' => $request->Jam,
+            'genreId' => $request->genreId
         ]);
 
         return redirect(route('getBooks'));
@@ -37,7 +39,7 @@ class BookController extends Controller
         return view('update', ['book' => $book]);
     }
 
-    public function updateBook(Request $request, $id) {
+    public function updateBook(BookRequest $request, $id) {
         $book = Book::find($id);
 
         // $book->title = $request->title;

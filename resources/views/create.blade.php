@@ -15,6 +15,11 @@
 
     <h1>DAFTAR PENJUALAN BARANG</h1>
 
+    <form action="{{route('logout')}}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-danger">logout</button>
+    </form>
+
     <form action="{{ route('createBook') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -40,6 +45,10 @@
         <div class="mb-3">
             <label for="Jam" class="form-label">Jam</label>
             <input name="Jam" type="time" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Jam Penjualan Barang">
+        </div>
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre Id</label>
+            <input name="genreId" type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Genre Id">
         </div>
         @error('Harga')
             <div class="alert alert-danger">{{$message}}</div>
