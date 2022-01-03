@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BookController;
+// use App\Http\Middleware\IsadminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,7 @@ Auth::routes();
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::group(['middleware'=> IsadminMiddleware::class], function () {
+//     Route::get('/create', [BookController::class, 'getCreatePage'])->name('getCreatePage');
+// });

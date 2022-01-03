@@ -15,6 +15,13 @@ class BookController extends Controller
         return view('create',['genres'=> $genres]);
     }
 
+    // public function getBookByGenre(Request $request, $name){
+    //     $books = DB::table('books')
+    //     ->join('genres','books.genreId', 'genres.id')
+    //     ->select('books.name')
+    //     ->where('book.genreId')
+    // }
+
     public function createBook(BookRequest $request){
         Book::create([
             'NamaPembeli' => $request->NamaPembeli,
