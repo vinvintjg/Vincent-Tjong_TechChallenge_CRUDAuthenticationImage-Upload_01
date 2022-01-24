@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,9 +10,7 @@
     <body style="background-image: linear-gradient(to right, #4682B4, #00FFFF, #00FA9A);">
     <title>Document</title>
 </head>
-<body> --}}
-@extends('layouts.layout')
-@section('content')
+<body>
 
     <h1>BOOK LIST</h1>
 
@@ -20,20 +18,25 @@
         <thead>
           <tr>
             <th scope="col">No</th>
-            <th scope="col">Name Of Book</th>
-            <th scope="col">Author Of Book</th>
-            <th scope="col">Pages Of Book</th>
-            <th scope="col">Year Release</th>
+            <th scope="col">Nama Pembeli</th>
+            <th scope="col">Barang</th>
+            <th scope="col">Harga</th>
+            <th scope="col">Jumlah</th>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Jam</th>
           </tr>
         </thead>
         <tbody>
             @foreach ($books as $book)
                 <tr>
                   <th scope="row">{{ $book->id }}</th>
-                  <td>{{ $book->Title }}</td>
-                  <td>{{ $book->Author }}</td>
-                  <td>{{ $book->Pages }}</td>
-                  <td>{{ $book->Year }}</td>
+                  <td>{{ $book->NamaPembeli }}</td>
+                  <td>{{ $book->Barang }}</td>
+                  <td>{{ $book->Harga }}</td>
+                  <td>{{ $book->Jumlah }}</td>
+                  <td>{{ $book->Tanggal }}</td>
+                  <td>{{ $book->Jam }}</td>
+                  <td>
                     <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
                     <form action="{{route('delete', ['id' => $book->id])}}" method="post">
                       @csrf
@@ -47,5 +50,3 @@
       </table>
 </body>
 </html>
-
-@endsection

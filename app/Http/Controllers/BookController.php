@@ -24,13 +24,10 @@ class BookController extends Controller
 
     public function createBook(BookRequest $request){
         Book::create([
-            'NamaPembeli' => $request->NamaPembeli,
-            'Barang' => $request->Barang,
-            'Harga' => $request->Harga,
-            'Jumlah' => $request->Jumlah,
-            'Tanggal' => $request->Tanggal,
-            'Jam' => $request->Jam,
-            'genreId' => $request->genreId
+            'Title' => $request->Title,
+            'Author' => $request->Author,
+            'Pages' => $request->Pages,
+            'Year' => $request->Year,
         ]);
 
         return redirect(route('getBooks'));
@@ -56,12 +53,10 @@ class BookController extends Controller
         // $book->save();
 
         $book -> update([
-            'NamaPembeli' => $request->NamaPembeli,
-            'Barang' => $request->Barang,
-            'Jumlah' => $request->Jumlah,
-            'Harga' => $request->Harga,
-            'Tanggal' => $request->Tanggal,
-            'Jam' => $request->Jam,
+            'Title' => $request->Title,
+            'Author' => $request->Author,
+            'Year' => $request->Year,
+            'Pages' => $request->Pages,
         ]);
 
         return redirect(route('getBooks'));

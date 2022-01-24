@@ -10,7 +10,7 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
-        'No','NamaPembeli', 'Barang', 'Jumlah', 'Harga', 'Tanggal', 'Jam', 'genreId'
+        'Title','Author', 'Pages', 'Year',
     ];
 
     public function genre(){

@@ -13,51 +13,87 @@
 @extends('layouts.layout')
 @section('content')
 
-    <h1>DAFTAR PENJUALAN BARANG</h1>
+    <h2></h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 shadow">
+                <div class="card">
+                    <div class="card-header text-center">{{ __('INPUT NEW BOOKS') }} </div>
+                        <div class="card-body">
+                        {{-- <form method="POST" action="{{ route('register') }}"> --}}
+                            {{-- @csrf --}}
+                            <form action="{{ route('createBook') }}" method="post" enctype="multipart/form-data">
+                                @csrf
 
-    <form action="{{route('logout')}}" method="POST">
-        @csrf
-        <button type="submit" class="btn btn-danger">logout</button>
-    </form>
-
-    <form action="{{ route('createBook') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-3">
-            <label for="NamaPembeli" class="form-label">Nama Pembeli</label>
-            <input name="NamaPembeli" type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama Pembeli">
+                                <div class="mb-3">
+                                    <label for="Title" class="form-label">Name Of Book</label>
+                                    <input name="Title" type="text" class="form-control" id="formGroupExampleInput" placeholder="Input Name Of Book">
+                                    @error('Title')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Author" class="form-label">Author Of Book</label>
+                                    <input name="Author" type="text" class="form-control" id="formGroupExampleInput" placeholder="Input Author Of Book">
+                                    @error('Author')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Pages" class="form-label">Pages Of Book</label>
+                                    <input name="Pages" type="numeric" class="form-control" id="formGroupExampleInput" placeholder="Input Pages Of Book">
+                                    @error('Pages')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Year" class="form-label">Year Release</label>
+                                    <input name="Year" type="date" class="form-control" id="formGroupExampleInput" placeholder="Input Year Of Release Book">
+                                    @error('Year')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                {{-- <div class="mb-3">
+                                    <label for="Tanggal" class="form-label">Tanggal</label>
+                                    <input name="Tanggal" type="date" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Tanggal Penjualan Barang">
+                                    @error('Year')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Jam" class="form-label">Jam</label>
+                                    <input name="Jam" type="time" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Jam Penjualan Barang">
+                                    @error('NamaPembeli')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="genre" class="form-label">Genre Id</label>
+                                    <input name="genreId" type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Genre Id">
+                                    @error('NamaPembeli')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div> --}}
+                                <button type="submit" class="btn btn-success">Insert</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="Barang" class="form-label">Barang</label>
-            <input name="Barang" type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama Barang">
-        </div>
-        <div class="mb-3">
-            <label for="Harga" class="form-label">Harga</label>
-            <input name="Harga" type="numeric" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Harga Barang">
-        </div>
-        <div class="mb-3">
-            <label for="Jumlah" class="form-label">Jumlah</label>
-            <input name="Jumlah" type="numeric" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Jumlah Barang">
-        </div>
-        <div class="mb-3">
-            <label for="Tanggal" class="form-label">Tanggal</label>
-            <input name="Tanggal" type="date" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Tanggal Penjualan Barang">
-        </div>
-        <div class="mb-3">
-            <label for="Jam" class="form-label">Jam</label>
-            <input name="Jam" type="time" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Jam Penjualan Barang">
-        </div>
-        <div class="mb-3">
-            <label for="genre" class="form-label">Genre Id</label>
-            <input name="genreId" type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Genre Id">
-        </div>
-        @error('Harga')
-            <div class="alert alert-danger">{{$message}}</div>
-        @enderror
-        <button type="submit" class="btn btn-success">Insert</button>
-    </form>
-
+    </div>
 @endsection
 
-{{--
-</body>
-</html> --}}

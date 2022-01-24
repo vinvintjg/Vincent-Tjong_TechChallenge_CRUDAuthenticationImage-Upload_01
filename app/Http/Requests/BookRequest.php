@@ -24,20 +24,18 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'NamaPembeli' => 'required',
-            'Barang' => 'required',
-            'Jumlah' => 'required|numeric',
-            'Harga' => 'required|numeric',
-            'Tanggal' => 'required',
-            'Jam' => 'required',
+            'Title' => 'required',
+            'Author' => 'required',
+            'Pages' => 'required|numeric',
+            'Year' => 'required',
         ];
     }
 
-    public function messages()
-    {
-        return [
-            // 'NamaPembeli.required' => 'Nama harus berupa variabel',
-            'Harga.numeric' => 'Harga harus berupa angka',
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         // 'NamaPembeli.required' => 'Nama harus berupa variabel',
+    //         'Harga.numeric' => 'Harga harus berupa angka',
+    //     ];
+    // }
 }

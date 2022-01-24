@@ -16,16 +16,14 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('NamaPembeli')->unique();
-            $table->string('Barang');
-            $table->string('Jumlah');
-            $table->integer('Harga');
-            $table->date('Tanggal')->nullable();
-            $table->time('Jam')->nullable();
-            $table->unsignedBigInteger('genreId');
-            $table->foreign('genreId')->references('id')->on('genres')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->string('Title')->unique();
+            $table->string('Author');
+            $table->string('Pages');
+            $table->date('Year')->nullable();
+            // $table->unsignedBigInteger('genreId');
+            // $table->foreign('genreId')->references('id')->on('genres')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
             $table->timestamps();
         });
     }
