@@ -14,51 +14,60 @@
 <body> --}}
 @extends('layouts.layout')
 @section('content')
+<div style="padding-top: 20px"></div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header text-center">{{ __('UPDATE BOOK') }}</div>
 
-    <h1>UPDATE DATA</h1>
+                <div class="card-body">
 
-    <form action="{{route('updateBook', ['id' => $book->id])}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('patch')
-        <div class="mb-3">
-            <label for="Title" class="form-label">Name Of Book</label>
-            <input name="Title" type="text" class="form-control" id="formGroupExampleInput" value="{{$book->Title}}" placeholder="Input Name Of Book">
-            @error('Title')
-            <div class="text-danger">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-        <div class="mb-3">
-            <label for="Author" class="form-label">Author Of Book</label>
-            <input name="Author" type="text" class="form-control" id="formGroupExampleInput" value="{{$book->Author}}" placeholder="Input Author Of Book">
-            @error('Author')
-            <div class="text-danger">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-        <div class="mb-3">
-            <label for="Pages" class="form-label">Pages Of Book</label>
-            <input name="Pages" type="numeric" class="form-control" id="formGroupExampleInput" value="{{$book->Pages}}" placeholder="Input Page Of Book">
-            @error('Pages')
-            <div class="text-danger">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-        <div class="mb-3">
-            <label for="Year" class="form-label">Year Release</label>
-            <input name="Year" type="date" class="form-control" id="formGroupExampleInput" value="{{$book->Year}}" placeholder="Input Year Of Release Book">
-            @error('Year')
-            <div class="text-danger">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-        <button type="submit" class="btn btn-success">Update</button>
-    </form>
-</body>
-</html>
+                    <form action="{{route('updateBook', ['id' => $book->id])}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('patch')
+                        <div class="mb-3">
+                            <label for="Title" class="form-label">Name Of Book</label>
+                            <input name="Title" type="text" class="form-control" id="formGroupExampleInput" value="{{$book->Title}}" placeholder="Input Name Of Book">
+                            @error('Title')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="Author" class="form-label">Author Of Book</label>
+                            <input name="Author" type="text" class="form-control" id="formGroupExampleInput" value="{{$book->Author}}" placeholder="Input Author Of Book">
+                            @error('Author')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="Pages" class="form-label">Pages Of Book</label>
+                            <input name="Pages" type="numeric" class="form-control" id="formGroupExampleInput" value="{{$book->Pages}}" placeholder="Input Page Of Book">
+                            @error('Pages')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="Year" class="form-label">Year Release</label>
+                            <input name="Year" type="date" class="form-control" id="formGroupExampleInput" value="{{$book->Year}}" placeholder="Input Year Of Release Book">
+                            @error('Year')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 @endsection

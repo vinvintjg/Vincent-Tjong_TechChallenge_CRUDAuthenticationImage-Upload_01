@@ -13,11 +13,11 @@
 @extends('layouts.layout')
 @section('content')
 
-    <h2></h2>
+<div style="padding-top: 20px"></div>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6 shadow">
-                <div class="card">
+            <div class="col-md-6">
+                <div class="card shadow">
                     <div class="card-header text-center">{{ __('INPUT NEW BOOKS') }} </div>
                         <div class="card-body">
                         {{-- <form method="POST" action="{{ route('register') }}"> --}}
@@ -61,33 +61,7 @@
                                     </div>
                                     @enderror
                                 </div>
-                                {{-- <div class="mb-3">
-                                    <label for="Tanggal" class="form-label">Tanggal</label>
-                                    <input name="Tanggal" type="date" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Tanggal Penjualan Barang">
-                                    @error('Year')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="Jam" class="form-label">Jam</label>
-                                    <input name="Jam" type="time" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Jam Penjualan Barang">
-                                    @error('NamaPembeli')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="genre" class="form-label">Genre Id</label>
-                                    <input name="genreId" type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Genre Id">
-                                    @error('NamaPembeli')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div> --}}
+
                                 <button type="submit" class="btn btn-success">Insert</button>
                             </form>
                         </div>

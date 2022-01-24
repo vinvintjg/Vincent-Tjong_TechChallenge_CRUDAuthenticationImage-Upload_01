@@ -13,39 +13,50 @@
 <body> --}}
 @extends('layouts.layout')
 @section('content')
+    <div style="padding-top: 20px"></div>
 
-    <h1>BOOK LIST</h1>
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Name Of Book</th>
-            <th scope="col">Author Of Book</th>
-            <th scope="col">Pages Of Book</th>
-            <th scope="col">Year Release</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach ($books as $book)
-                <tr>
-                  <th scope="row">{{ $book->id }}</th>
-                  <td>{{ $book->Title }}</td>
-                  <td>{{ $book->Author }}</td>
-                  <td>{{ $book->Pages }}</td>
-                  <td>{{ $book->Year }}</td>
-                    <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
-                    <form action="{{route('delete', ['id' => $book->id])}}" method="post">
-                      @csrf
-                      @method('delete')
-                      <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                  </td>
-                </tr>
-            @endforeach
-        </tbody>
-      </table>
-</body>
-</html>
+    {{-- <div style="padding-top: 20px"></div> --}}
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="card shadow">
+                <div class="card-header">{{ __('BOOK LIST') }}</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name Of Book</th>
+                                <th scope="col">Author Of Book</th>
+                                <th scope="col">Pages Of Book</th>
+                                <th scope="col">Year Release</th>
+                                <th scope="col">Update Book</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($books as $book)
+                                    <tr>
+                                    <th scope="row">{{ $book->id }}</th>
+                                    <td>{{ $book->Title }}</td>
+                                    <td>{{ $book->Author }}</td>
+                                    <td>{{ $book->Pages }}</td>
+                                    <td>{{ $book->Year }}</td>
+                                    <td>
+                                        <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success col-md-4 mb-1">Edit</button></a>
+                                        <form action="{{route('delete', ['id' => $book->id])}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger col-md-4.2">Delete</button>
+                                        </form>
+                                    </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+{{-- </body> --}}
+{{-- </html> --}}
 
 @endsection

@@ -3,12 +3,12 @@
 {{-- @extends('layouts.app') --}}
 
 @section('content')
-<h2></h2>
+<div style="padding-top: 20px"></div>
 <div class="container">
     <div class="row justify-content-center text-center">
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <div class="card shadow">
+                <div class="card-header">{{ __('DASHBOARD') }}</div>
 
                 <div class="card-body">
                     {{-- @if (session('status'))
