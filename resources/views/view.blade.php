@@ -14,10 +14,10 @@
 @extends('layouts.layout')
 @section('content')
     <div style="padding-top: 20px"></div>
-
-    {{-- <div style="padding-top: 20px"></div> --}}
-    <div class="container col-md-9">
-        <div class="row justify-content-center text-center">
+    {{-- @if ($datas->count()) --}}
+    <div class="container">
+        <div class="row justify-content-center text-center ">
+            <div class="col-md-9">
             <div class="card shadow">
                 <div class="card-header">{{ __('BOOK LIST') }}</div>
                     <div class="card-body">
@@ -42,7 +42,7 @@
                                     <td>{{ $book->Pages }}</td>
                                     <td>{{ $book->Year }}</td>
                                     <td>
-                                        <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success col-md-7">Edit</button></a>
+                                        <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success col-md-9">Edit</button></a>
                                     </td>
                                     <td>
                                         <form action="{{route('delete', ['id' => $book->id])}}" method="post">
@@ -56,10 +56,14 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
             </div>
         </div>
     </div>
-{{-- </body> --}}
-{{-- </html> --}}
+    {{-- @else
+    <div class="text-center">
+        <h1>No Books Available</h1>
+    </div>
+    @endif --}}
 
 @endsection
