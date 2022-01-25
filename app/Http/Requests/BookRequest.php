@@ -24,9 +24,9 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'Title' => 'required',
-            'Author' => 'required',
-            'Pages' => 'required|numeric',
+            'Title' => 'required|min:5|max:20',
+            'Author' => 'required|min:5|max:20',
+            'Pages' => 'required|numeric|min:0',
             'Year' => 'required',
         ];
     }

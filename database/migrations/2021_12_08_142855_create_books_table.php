@@ -20,10 +20,6 @@ class CreateBooksTable extends Migration
             $table->string('Author')->nullable();
             $table->string('Pages')->nullable();
             $table->date('Year')->nullable();
-            // $table->unsignedBigInteger('genreId');
-            // $table->foreign('genreId')->references('id')->on('genres')
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
             $table->timestamps();
         });
     }

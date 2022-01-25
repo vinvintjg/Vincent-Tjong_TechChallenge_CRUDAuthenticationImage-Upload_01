@@ -16,7 +16,7 @@
     <div style="padding-top: 20px"></div>
 
     {{-- <div style="padding-top: 20px"></div> --}}
-    <div class="container">
+    <div class="container col-md-9">
         <div class="row justify-content-center text-center">
             <div class="card shadow">
                 <div class="card-header">{{ __('BOOK LIST') }}</div>
@@ -29,7 +29,8 @@
                                 <th scope="col">Author Of Book</th>
                                 <th scope="col">Pages Of Book</th>
                                 <th scope="col">Year Release</th>
-                                <th scope="col">Update Book</th>
+                                <th scope="col">Edit Book</th>
+                                <th scope="col">Delete Book</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -41,11 +42,13 @@
                                     <td>{{ $book->Pages }}</td>
                                     <td>{{ $book->Year }}</td>
                                     <td>
-                                        <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success col-md-4 mb-1">Edit</button></a>
+                                        <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success col-md-7">Edit</button></a>
+                                    </td>
+                                    <td>
                                         <form action="{{route('delete', ['id' => $book->id])}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger col-md-4.2">Delete</button>
+                                        <button type="submit" class="btn btn-danger col-md-4.0">Delete</button>
                                         </form>
                                     </td>
                                     </tr>
