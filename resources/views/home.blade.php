@@ -32,7 +32,7 @@
         }
         .spin {
         animation-name: spinning;
-        animation-duration: 3s;
+        animation-duration: 20s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         }
@@ -41,8 +41,9 @@
       </style>
 </head>
 <body>
-    <div class="d-flex justify-content-center" style="height: 50px; padding-top: 70px">
-        <img src="https://lh5.googleusercontent.com/-9p1vMf21Py4/TYgNGIt41xI/AAAAAAAAAC0/wbiShfRGVTM/s1600/iceweasel.png" height="350" class="spin" />
+    <div class="d-flex justify-content-center" style="padding-top: 70px">
+        <img src="asset/logobumi.png" height="400" class="spin" />
+        <a href="http://www.freepik.com"></a>
     </div>
 </body>
 
@@ -61,7 +62,7 @@
         }
         .spin {
         animation-name: spinning;
-        animation-duration: 8s;
+        animation-duration: 15s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-out;
         }

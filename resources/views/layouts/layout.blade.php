@@ -13,9 +13,9 @@
 <body>
     <nav class="border-bottom shadow navbar navbar-scroll navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <img src="https://lh5.googleusercontent.com/-9p1vMf21Py4/TYgNGIt41xI/AAAAAAAAAC0/wbiShfRGVTM/s1600/iceweasel.png" height="70" alt=""
-      loading="lazy" />
-          {{-- <a class="navbar-brand" href="#">Navbar</a> --}}
+            <img src="asset/logobumi.png" height="70" alt="" loading="lazy" />
+                <a href="http://www.freepik.com"></a>
+            {{-- <a class="navbar-brand" href="#">Navbar</a> --}}
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -48,7 +48,7 @@
     @yield('content')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      
+
 </body>
 
 
