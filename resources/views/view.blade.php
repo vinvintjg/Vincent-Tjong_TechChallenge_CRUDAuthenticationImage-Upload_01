@@ -15,6 +15,14 @@
 @section('content')
     <div style="padding-top: 20px"></div>
     {{-- @if ($datas->count()) --}}
+        <div class=" text-center ">
+            <form method="GET" action="{{url('books')}}">
+                <input type="text" name="cari" placeholder="Search"/>
+                <button class=" btn-outline me-2" type="submit">Search</button>
+            </form>
+            <br>
+        </div>
+
     <div class="container">
         <div class="row justify-content-center text-center ">
             <div class="col-md-9">

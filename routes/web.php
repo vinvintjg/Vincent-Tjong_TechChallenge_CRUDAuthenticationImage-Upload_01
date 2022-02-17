@@ -32,6 +32,8 @@ Route::patch('/update-book/{id}', [BookController::class, 'updateBook'])->name('
 
 Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name('delete');
 
+Route::get('/cari', [BookController::class, 'cari'])->name('cari');
+
 Route::get('/hello', function () {
     echo('Hello World');
 });
@@ -41,6 +43,7 @@ Auth::routes();
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Route::group(['middleware'=> IsadminMiddleware::class], function () {
 //     Route::get('/create', [BookController::class, 'getCreatePage'])->name('getCreatePage');

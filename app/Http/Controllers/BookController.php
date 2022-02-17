@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
+
     public function getCreatePage() {
         $genres = Genre::all();
         return view('create',['genres'=> $genres]);
@@ -31,6 +32,16 @@ class BookController extends Controller
         ]);
 
         return redirect(route('getBooks'));
+    }
+
+    public function cari(Request $request){
+        $cari = $request->cari;
+        $books = Book::where('Title', 'LIKE', '%'.$keyword.'%')
+        ->orWhere('Author', 'LIKE', '%'.$keyword.'%')
+        ->orWhere('Pages', 'LIKE', '%'.$keyword.'%')
+        ->orWhere('Year', 'LIKE', '%'.$keyword.'%')
+        ->get();
+        return view('view', ['books' => $books]);
     }
 
     public function getBooks(){
