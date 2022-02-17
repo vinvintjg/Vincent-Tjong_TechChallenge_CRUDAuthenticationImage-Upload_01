@@ -32,10 +32,12 @@ Route::patch('/update-book/{id}', [BookController::class, 'updateBook'])->name('
 
 Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name('delete');
 
-Route::get('/cari', [BookController::class, 'cari'])->name('cari');
+// Route::get('/cari', [BookController::class, 'cari'])->name('cari');
+
+Route::get('/', [BookController::class, 'searchBook'])->name('search1');
 
 Route::get('/hello', function () {
-    echo('Hello World');
+echo('Hello World');
 });
 
 Auth::routes();

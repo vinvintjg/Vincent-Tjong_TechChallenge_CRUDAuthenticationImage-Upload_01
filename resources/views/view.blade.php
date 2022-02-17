@@ -15,13 +15,16 @@
 @section('content')
     <div style="padding-top: 20px"></div>
     {{-- @if ($datas->count()) --}}
-        <div class=" text-center ">
-            <form method="GET" action="{{url('books')}}">
-                <input type="text" name="cari" placeholder="Search"/>
-                <button class=" btn-outline me-2" type="submit">Search</button>
-            </form>
-            <br>
-        </div>
+
+    {{-- <div class="text-center">
+        <form method="GET" action="{{url('books')}}">
+            <input type="text" name="cari" placeholder="Search"/>
+            <button class="" type="submit">Search</button>
+        </form>
+    <br>
+    </div> --}}
+
+
 
     <div class="container">
         <div class="row justify-content-center text-center ">
@@ -29,6 +32,15 @@
             <div class="card shadow">
                 <div class="card-header">{{ __('BOOK LIST') }}</div>
                     <div class="card-body">
+                        <div class="text-center">
+                            <form action="{{route('search1')}}" method="GET">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="cari" placeholder="Search" value=""/>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
+                        <br>
+                        </div>
                         <table class="table">
                             <thead>
                             <tr>
