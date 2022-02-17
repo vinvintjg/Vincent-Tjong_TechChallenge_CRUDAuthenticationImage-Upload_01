@@ -35,20 +35,19 @@ class BookController extends Controller
     }
 
     public function searchBook(Request $request){
-        if($request){
-            $books = Book::where('Title', 'like', '%'.$request->cari.'%')
-            ->orWhere('Author', 'LIKE', '%'.$request->cari.'%')
-            ->orWhere('Pages', 'LIKE', '%'.$request->cari.'%')
-            ->orWhere('Year', 'LIKE', '%'.$request->cari.'%')
-            ->get();
-        }else{
-            $books = Book::all();
-        }
+        $cari = $request->cari;
+        $books = Book::where('Title', 'like', '%'.$cari.'%')
+            ->orWhere('Author', 'like', '%'.$cari.'%')
+            ->orWhere('Pages', 'like', '%'.$cari.'%')
+            ->orWhere('Year', 'like', '%'.$cari.'%')
+            ->paginate(5);
+        $books->withPath('');
+        $books->appends($request->all());
         return view('view', compact('books', 'request'));
     }
 
     public function getBooks(){
-        $books = Book::all();
+        $books = Book::paginate(5);
         return view('view', ['books' => $books]);
     }
 

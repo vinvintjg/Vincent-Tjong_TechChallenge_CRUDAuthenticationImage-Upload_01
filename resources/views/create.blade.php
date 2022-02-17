@@ -61,7 +61,6 @@
                                     </div>
                                     @enderror
                                 </div>
-
                                 <button type="submit" class="btn btn-success">Insert</button>
                             </form>
                         </div>

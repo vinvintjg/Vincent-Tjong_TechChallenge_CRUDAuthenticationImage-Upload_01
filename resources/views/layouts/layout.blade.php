@@ -33,13 +33,13 @@
               </li>
             </ul>
 
-            <form class="d-flex">
+            {{-- <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success me-2" type="submit">Search</button>
-            </form>
+            </form> --}}
             <form action="{{route('logout')}}" method="POST">
                 @csrf
-                <button type="submit" class="btn btn-danger">logout</button>
+                <button type="submit" class="btn btn-outline-danger me-2">logout</button>
             </form>
           </div>
         </div>
