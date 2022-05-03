@@ -34,8 +34,6 @@ Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name(
 
 Route::get('/', [BookController::class, 'searchBook'])->name('search1');
 
-// Route::get('books', 'BookController@index');
-
 Route::get('/hello', function () {
 echo('Hello World');
 });

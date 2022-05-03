@@ -24,8 +24,6 @@
     <br>
     </div> --}}
 
-
-
     <div class="container">
         <div class="row justify-content-center text-center ">
             <div class="col-md-9">
@@ -35,6 +33,11 @@
                         <div class="text-center">
                             <form action="{{route('search1')}}" method="GET">
                                 <div class="input-group">
+                                    <form class="form-inline" action="">
+                                    <label for="category_filter" class="me-5">Filter By Category</label>
+                                    <select class="form-control me-5" id="category_filter" name="category">
+                                        <option value="">Select Category</option>
+                                    </select>
                                     <input type="text" class="form-control" name="cari" placeholder="Search" value=""/>
                                     <button type="submit" class="btn btn-primary">Search</button>
                                 </div>
