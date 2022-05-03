@@ -16,19 +16,18 @@ class BookController extends Controller
         return view('create',['genres'=> $genres]);
     }
 
-    // public function getBookByGenre(Request $request, $name){
-    //     $books = DB::table('books')
-    //     ->join('genres','books.genreId', 'genres.id')
-    //     ->select('books.name')
-    //     ->where('book.genreId')
-    // }
-
     public function createBook(BookRequest $request){
+
+        $extension = $request->file('Image')->getClientOriginalExtension();
+        $fileName = $request->Title.'_'.$request->Author.'.'.$extension;//rename image
+        $request->file('Image')->storeAs('public/Image/', $fileName);//save image
+
         Book::create([
             'Title' => $request->Title,
             'Author' => $request->Author,
             'Pages' => $request->Pages,
             'Year' => $request->Year,
+            'Image'=> $fileName
         ]);
 
         return redirect(route('getBooks'));
@@ -59,12 +58,6 @@ class BookController extends Controller
     public function updateBook(BookRequest $request, $id) {
         $book = Book::find($id);
 
-        // $book->title = $request->title;
-        // $book->author = $request->author;
-        // $book->release = $request->release;
-        // $book->price = $request->price;
-        // $book->save();
-
         $book -> update([
             'Title' => $request->Title,
             'Author' => $request->Author,
@@ -79,4 +72,5 @@ class BookController extends Controller
         Book::destroy($id);
         return redirect(route('getBooks'));
     }
+    
 }

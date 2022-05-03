@@ -22,7 +22,8 @@
                         <div class="card-body">
                         {{-- <form method="POST" action="{{ route('register') }}"> --}}
                             {{-- @csrf --}}
-                            <form action="{{ route('createBook') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('createBook') }}" method="POST" enctype="multipart/form-data">
+
                                 @csrf
 
                                 <div class="mb-3">
@@ -61,6 +62,15 @@
                                     </div>
                                     @enderror
                                 </div>
+                                <div class="mb-3">
+                                    <label for="Image" class="form-label">Image of Book</label>
+                                    <input name="Image" type="file" class="form-control" id="formGroupExampleInput" placeholder="Input Image Of Book">
+                                    @error('Image')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                  </div>
                                 <button type="submit" class="btn btn-success">Insert</button>
                             </form>
                         </div>

@@ -10,12 +10,12 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Title','Author', 'Pages', 'Year',
+        'Title','Author', 'Pages', 'Year', 'Image',
     ];
 
-    public function genre(){
-        return $this ->belongsTo(Genre::class);
-    }
+    // public function genre(){
+    //     return $this->hasMany(Comment::class);
+    // }
 }
 
 
