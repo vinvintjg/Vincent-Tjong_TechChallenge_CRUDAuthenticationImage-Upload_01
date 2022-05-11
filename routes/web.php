@@ -36,8 +36,9 @@ Route::get('/', [BookController::class, 'searchBook'])->name('search1');
 
 Route::get('/gallery', [BookController::class, 'gallery'])->name('gallery');
 
-Auth::routes();
-
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
