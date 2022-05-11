@@ -62,6 +62,15 @@
                             </div>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="Image" class="form-label">Iamge Book</label>
+                            <input name="Image" type="file" class="form-control" id="formGroupExampleInput" value="{{$book->Image}}" placeholder="Input Image Of Book">
+                            @error('Image')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                         <button type="submit" class="btn btn-success">Update</button>
                     </form>
 </div>

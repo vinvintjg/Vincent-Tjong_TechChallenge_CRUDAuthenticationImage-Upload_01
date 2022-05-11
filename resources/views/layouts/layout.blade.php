@@ -28,8 +28,11 @@
               <li class="nav-item me-2">
                 <a class="nav-link active" aria-current="page" href="{{ route('getCreatePage')}}">INPUT</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item me-2">
                 <a class="nav-link active" aria-current="page" href="{{ route('getBooks')}}">VIEW</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('gallery')}}">GALLERY</a>
               </li>
             </ul>
 

@@ -28,14 +28,7 @@ class BookRequest extends FormRequest
             'Author' => 'required|min:5|max:20',
             'Pages' => 'required|numeric|min:0',
             'Year' => 'required',
+            'Image' => 'required|mimes:png,jpg,jpeg|max:1000',
         ];
     }
-
-    // public function messages()
-    // {
-    //     return [
-    //         // 'NamaPembeli.required' => 'Nama harus berupa variabel',
-    //         'Harga.numeric' => 'Harga harus berupa angka',
-    //     ];
-    // }
 }

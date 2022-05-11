@@ -52,6 +52,7 @@
                                 <th scope="col">Author Of Book</th>
                                 <th scope="col">Pages Of Book</th>
                                 <th scope="col">Year Release</th>
+                                <th scope="col">Image Of Book</th>
                                 <th scope="col">Edit Book</th>
                                 <th scope="col">Delete Book</th>
                             </tr>
@@ -64,6 +65,9 @@
                                     <td>{{ $book->Author }}</td>
                                     <td>{{ $book->Pages }}</td>
                                     <td>{{ $book->Year }}</td>
+                                    <td>
+                                        <img src="{{asset('storage/Image/'.$book->Image)}}" alt="Error" style="height: 50px" >
+                                    </td>
                                     <td>
                                         <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success col-md-9">Edit</button></a>
                                     </td>

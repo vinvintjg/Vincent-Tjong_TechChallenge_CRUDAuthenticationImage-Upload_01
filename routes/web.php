@@ -34,17 +34,10 @@ Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name(
 
 Route::get('/', [BookController::class, 'searchBook'])->name('search1');
 
-Route::get('/hello', function () {
-echo('Hello World');
-});
+Route::get('/gallery', [BookController::class, 'gallery'])->name('gallery');
 
 Auth::routes();
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-// Route::group(['middleware'=> IsadminMiddleware::class], function () {
-//     Route::get('/create', [BookController::class, 'getCreatePage'])->name('getCreatePage');
-// });
